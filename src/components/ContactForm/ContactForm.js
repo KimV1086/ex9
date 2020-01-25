@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Button, Form, Input, Media} from "reactstrap";
+import "./ContactForm.css"
 
 class ContactForm extends Component {
     constructor(props) {
@@ -35,36 +37,38 @@ class ContactForm extends Component {
         }
 
         return (
-            <form className="ContactForm" onSubmit={this.submit}>
-                <input name="contactName"
+            <Form className="ContactForm" onSubmit={this.submit}>
+                <Input
+                    for="exampleText"
+                    name="contactName"
                        placeholder="Contact name"
                        onChange={this.valueChanged}
                        value={this.state.contactName}
                 />
-                <input name="phone"
+                <Input name="phone"
                        placeholder="Phone"
                        onChange={this.valueChanged}
                        value={this.state.phone}
                 />
-                <input name="email"
+                <Input name="email"
                        type="email"
                        placeholder="Email"
                        onChange={this.valueChanged}
                        value={this.state.email}
                 />
-                <input name="image"
+                <Input name="image"
                        type="text"
                        placeholder="Contact image"
                        onChange={this.valueChanged}
                        value={this.state.image}
                 />
                 <div>
-                    <img src={source} alt=""/>
+                    <Media src={source} alt=""/>
                 </div>
                 <div>
-                    <button type="submit">Save</button>
+                    <Button type="submit">Save</Button>
                 </div>
-            </form>
+            </Form>
         );
     }
 }

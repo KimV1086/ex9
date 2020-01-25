@@ -4,8 +4,9 @@ import {connect} from "react-redux";
 import {applyMiddleware as dispatch} from "redux";
 
 import ContactForm from "../../components/ContactForm/ContactForm";
-
 import {addContact} from "../../store/actions/contactAction";
+
+import "./ContactAdd.css"
 
 
 class ContactAdd extends Component {
