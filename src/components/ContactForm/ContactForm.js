@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-
-import './ContactForm.css';
+import {Button, Form, FormGroup, Input} from "reactstrap";
 
 class ContactForm extends Component {
     constructor(props) {
@@ -36,37 +35,54 @@ class ContactForm extends Component {
             source = this.state.image
         }
 
+        const imgStyle = {
+            maxHeight: 220,
+            maxWidth: 220,
+        };
+
         return (
-            <form className="ContactForm" onSubmit={this.submit}>
-                <input name="contactName"
-                       placeholder="Contact name"
-                       onChange={this.valueChanged}
-                       value={this.state.contactName}
-                />
-                <input name="phone"
-                       placeholder="Phone"
-                       onChange={this.valueChanged}
-                       value={this.state.phone}
-                />
-                <input name="email"
-                       type="email"
-                       placeholder="Email"
-                       onChange={this.valueChanged}
-                       value={this.state.email}
-                />
-                <input name="image"
-                       type="text"
-                       placeholder="Contact image"
-                       onChange={this.valueChanged}
-                       value={this.state.image}
-                />
+            <Form className="ContactForm" onSubmit={this.submit}>
+                <FormGroup>
+                    <Input name="contactName"
+                           placeholder="Contact name"
+                           onChange={this.valueChanged}
+                           value={this.state.contactName}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Input name="phone"
+                           placeholder="Phone"
+                           onChange={this.valueChanged}
+                           value={this.state.phone}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Input name="email"
+                           type="email"
+                           placeholder="Email"
+                           onChange={this.valueChanged}
+                           value={this.state.email}
+                    />
+                </FormGroup>
+                <FormGroup>
+
+                </FormGroup>
+                <FormGroup>
+                    <Input name="image"
+                           type="text"
+                           placeholder="Contact image"
+                           onChange={this.valueChanged}
+                           value={this.state.image}
+                    />
+                </FormGroup>
+
                 <div>
-                    <img src={source} alt=""/>
+                    <img src={source} style={imgStyle} alt=""/>
                 </div>
-                <div>
-                    <button type="submit">Save</button>
-                </div>
-            </form>
+
+                    <Button type="submit">Save</Button>
+
+            </Form>
         );
     }
 }

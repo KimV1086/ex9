@@ -4,6 +4,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import {connect} from "react-redux";
 import {editContact, goToEditContact} from "../../store/actions/contactAction";
+import {Container} from "reactstrap";
 
 class ContactEdit extends Component {
 
@@ -17,10 +18,13 @@ class ContactEdit extends Component {
 
 
     render() {
-        let formContact = <ContactForm
-            onSubmit={this.edit}
-            contact={this.props.contact}
-        />;
+        let formContact =
+            <Container>
+                <ContactForm
+                    onSubmit={this.edit}
+                    contact={this.props.contact}
+                />
+            </Container>
 
         if (!this.props.contact) {
             formContact = <Spinner/>

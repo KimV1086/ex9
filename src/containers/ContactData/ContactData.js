@@ -1,18 +1,24 @@
 import React from 'react';
 
-import './ContactData.css';
+import {Button, Card, CardBody, CardImg, CardSubtitle, CardTitle} from "reactstrap";
 
 const ContactData = props => {
+    const imgStyle = {
+        maxHeight: 220,
+        maxWidth: 220,
+    };
     return (
-        <div className="ContactData">
-            <img className="ContactImage" src={props.image} alt="contact"/>
-            <p><strong>Name: </strong>{props.contactName}</p>
-            <p><strong>Phone: </strong>{props.phone}</p>
-            <p><strong>Email: </strong>{props.email}</p>
-            <button className="Button" onClick={props.goToEdit}>Edit</button>
-            <button className="Button" onClick={props.delete}>Delete</button>
-            <button className="ButtonClose" onClick={props.close}>Cancel</button>
-        </div>
+        <Card>
+            <CardBody>
+                <CardImg top width="100%" src={props.image} style = {imgStyle} alt="Card image cap"/>
+                <CardTitle>Name: {props.contactName}</CardTitle>
+                <CardSubtitle>Phone: {props.phone}</CardSubtitle>
+                <CardSubtitle>Email: {props.email}</CardSubtitle>
+                <Button onClick={props.goToEdit}>Edit</Button>{' '}
+                <Button onClick={props.delete}>Delete</Button>{' '}
+                <Button onClick={props.close}>Cancel</Button>
+            </CardBody>
+        </Card>
     );
 };
 
