@@ -10,11 +10,12 @@ class Nav extends Component {
         return (
             <nav className="MainNav">
                 <h3 className="Logo">Contacts</h3>
-                <NavLink className="NavLink"   activeClassName="Active" exact={true} to="/">Home</NavLink>
-                <NavLink className="NavLink"  activeClassName="Active" to="/contacts/add">Add</NavLink>
+                <NavLink className="NavLink" activeClassName="Active" exact={true} to="/">Home</NavLink>
+                <NavLink className="NavLink" activeClassName="Active" to="/contacts/add">Add</NavLink>
             </nav>
         );
     }
 }
+
 
 export default Nav;
