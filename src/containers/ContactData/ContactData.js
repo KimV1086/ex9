@@ -1,5 +1,6 @@
 import React from 'react';
-import "./ContactData.css"
+
+import './ContactData.css';
 
 const ContactData = props => {
     return (

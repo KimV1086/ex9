@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
+
+import './Layout.css';
 import MainNav from "../MainNav/MainNav";
-import "./Layout.css"
 
 const Layout = ({children}) => (
 
