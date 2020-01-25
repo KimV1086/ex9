@@ -24,6 +24,7 @@ class ContactAdd extends Component {
         );
     }
 }
+
 const mapDispatchToProps = () => {
     return {
         addContact: (history, contactName) => dispatch(addContact(history, contactName))
